@@ -17,6 +17,7 @@ jobs:
       - run: unzip -q snap_nooruddin.zip
       - working-directory: snap_nooruddin
         run: |
+          sed -i 's/^  intl: .*/  intl: any/' pubspec.yaml
           flutter create --org com.nooruddin --project-name snap_nooruddin .
           cp android_manifest_notes/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
           flutter pub get
